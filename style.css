@@ -8,7 +8,7 @@ nav {
     justify-content: flex-end;
     position:fixed;
     width: 100%;
-    background-color: #275D38;
+    background-color: #a17033;
     color: #fff;
     height: 60px; 
     align-items: center; 
@@ -20,7 +20,10 @@ display: flex;
 list-style-type: none; 
 width: 300px;
 justify-content: space-around;
+padding-right: 20px; 
+font-family: 'Roboto', sans-serif;
 }
+
 #navlist a {
     display: block;  
 }
@@ -30,30 +33,36 @@ justify-content: space-around;
  }
 
  #navlist a:hover {
-     color: blue; 
+     color: #000; 
  }
 
 li {
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
 }
 
 h1 {
-    color: #000;
+    color: #fff;
+    font-size: 2.1rem;
 }
 
 #welcome-section {
-    background-color: aqua;
+    background-color: #000;
     height: 100vh;
     display: flex;
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
+    color: #fff;
+    line-height: 2.5em;
+    font-family: 'Lato', sans-serif;
 }
 
 #projects {
 text-align: center;  
 padding-top: 7%; 
-
+background-color: #eee;
+background-image: url("assets/hexellence.png");
+font-family: 'Lato', sans-serif;
 }
 
 .project-tile {
@@ -79,25 +88,41 @@ padding: 6% 0 8% 0;
   }  
 
  #contact {
-     background-color: pink;
+    font-family: 'Lato', sans-serif;
      padding: 6% 0;
      text-align: center;
-     
+     background-color: #000;
+     color: #fff;
  }
 
 .contact-links {
     display: flex;
     justify-content: space-evenly;
-    padding: 7% 0 70px 0;
+    padding: 7% 0 60px 0;
+    font-size: 1.3em;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+#contact a:link {
+    color:#b48246;
+}
+
+#contact a:hover {
+    color: #fff;
+    transform: scaleY(1.3) scaleX(1.3);
+
 }
 
  footer {
      text-align: center;
-     background-color: #333;
+     font-family: 'Lato', sans-serif;
+     background-color: #000;
      color: #fff;
-     padding: .7rem;
+     padding: .8rem;
  }
 
  footer p {
-     padding: 5px 0; 
+     padding: .5rem 0; 
+     font-size: .9rem;
  }
