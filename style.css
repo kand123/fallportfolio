@@ -47,6 +47,7 @@ h1 {
 
 #welcome-section {
     background-color: #000;
+    
     height: 100vh;
     display: flex;
     flex-direction: column; 
