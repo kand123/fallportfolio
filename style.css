@@ -42,20 +42,25 @@ li {
 
 h1 {
     color: #fff;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
 }
 
 #welcome-section {
     background-color: #000;
     
     height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
+    
+    
+    
     color: #fff;
-    line-height: 2.5em;
+    
     font-family: 'Lato', sans-serif;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 3rem;
+justify-items: center;
 }
 
 #projects {
