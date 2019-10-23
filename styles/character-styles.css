@@ -1,0 +1,42 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+header h1 {
+    color: red; 
+    font-size: 2.3rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1.2fr));
+    grid-gap: 3rem;
+    text-align: justify;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+
+main p {
+    padding-left: 5rem;
+}
+
+div {
+    background-color: gray;
+    padding-bottom: 15px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+/*button {
+
+}
+
+

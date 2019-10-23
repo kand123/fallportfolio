@@ -3,6 +3,7 @@
 }
 
 
+
 nav {
     display:flex;
     justify-content: flex-end;
@@ -42,49 +43,82 @@ li {
 
 h1 {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 2.6rem;
+    
 }
+h2 {
+    font-size: 1.4rem;
+    
+}
+
 
 #welcome-section {
     background-color: #000;
     
     height: 100vh;
-    
-    
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
     
     color: #fff;
     
     font-family: 'Lato', sans-serif;
 
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 3rem;
-justify-items: center;
 }
 
 #projects {
 text-align: center;  
 padding-top: 7%; 
 background-color: #eee;
-background-image: url("assets/hexellence.png");
+background-image: url("/assets/images/hexellence.png");
 font-family: 'Lato', sans-serif;
+
 }
 
-.project-tile {
-display: flex; 
-justify-content: space-evenly;
-padding: 6% 0 8% 0;
+
+
+.projects-grid figure img{
+    max-height: 250px;
 }
 
-.project-tile figure img{
-    max-height: 210px;
-}
-figcaption {
+
+.projects-grid figcaption {
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
     background-color: #fff;
     padding: 6px 0;
-
+    
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+   
+    padding: 7% 0 8% 0;
+  }
+  
+  @media (max-width: 30.625em) {
+    .projects-section {
+      padding: 6rem 1rem;
+    }
+     .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  }
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 550px) {
    
@@ -93,8 +127,8 @@ figcaption {
       flex-direction: column;
       line-height: 1.3em;
     }
-    
-  }  
+} 
+  
 
  #contact {
     font-family: 'Lato', sans-serif;
@@ -111,7 +145,6 @@ figcaption {
     font-size: 1.3em;
     font-family: 'Roboto', sans-serif;
     
-   
 }
 
 #contact a:link {
