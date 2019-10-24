@@ -10,19 +10,18 @@ header h1 {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1.2fr));
-    grid-gap: 3rem;
-    text-align: justify;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem;
+    
     padding-bottom: 20px;
     text-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 
-
-main p {
-    padding-left: 5rem;
+main h1 {
+    font-size: 1.5rem;
 }
 
 div {
