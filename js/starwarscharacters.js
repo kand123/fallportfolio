@@ -99,3 +99,55 @@ otherButton.addEventListener("click", () => {
 mainHeader.appendChild(otherButton);
 
 
+let allButton = document.createElement("button")
+allButton.textContent = "All"
+allButton.addEventListener("click", () => {
+  femaleCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });
+  maleCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });
+  otherCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });
+});
+mainHeader.appendChild(allButton);
+
+
+
+/*if (matchedDiv[0].includes("display:none")) {
+    matchedDiv[0].setAttribute("style", "display: revert;");
+
+}
+
+
+
+
+femaleCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });
+  maleCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });
+  otherCharacters.forEach(elt => {
+    let matchedDiv = allDivs.filter(element => {
+      return element.firstChild.textContent === elt.name;
+    });
+    matchedDiv[0].setAttribute("style", "display: revert;");
+  });*/

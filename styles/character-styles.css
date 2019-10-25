@@ -36,6 +36,7 @@ div {
 header {
   display: flex;
   justify-content: center;
+  
 }
 
 button {
@@ -58,6 +59,7 @@ button:hover {
   background-color: #ff511e;
   color: #fff;
 }
+
 
 img {
   max-width: 200px;

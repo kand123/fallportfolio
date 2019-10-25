@@ -4,31 +4,53 @@ body {
 }
 
 header h1 {
-    color: red; 
-    font-size: 2.3rem;
+    color: #ff511e; 
+    font-size: 2.5rem;
+    
 }
+
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1.2fr));
-    grid-gap: 3rem;
-    text-align: justify;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3.6rem;
+    
     padding-bottom: 20px;
     text-align: center;
+    margin-top: 50px;
+    
 }
 
 
-
-
+header p {
+    font-size: 1.2rem;
+    margin-top: 0px;
+}
 
 
 header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-/*button {
-
+div {
+    width: 270px;
+    line-height: 1.2rem;
+    text-align: center;
 }
 
+div p {
+    line-height: 1.2rem;
+}
 
+h2 {
+    color: #ff511e;
+}
+
+header img {
+    width: 300px;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}

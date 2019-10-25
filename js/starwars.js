@@ -8,7 +8,7 @@ let mainArea = document.querySelector('main')
 
 films.forEach(function(film) {
 let filmDiv = document.createElement('div')
-let title = document.createElement('h1')
+let title = document.createElement('h2')
 let crawl = document.createElement('p')
 
 
