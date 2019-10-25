@@ -1,41 +1,77 @@
 body {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+header {
+  display: flex;
+
+  text-align: center;
 }
 
 header h1 {
-    color: red; 
-    font-size: 2.3rem;
+  color: red;
+  font-size: 2.3rem;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2rem;
-    
-    padding-bottom: 20px;
-    text-align: center;
-    margin-left: 25px;
-    margin-right: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-gap: 2rem;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 85px;
 }
 
-
 main h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 div {
-    background-color: gray;
-    padding-bottom: 15px;
+  background-color: gray;
+  padding-bottom: 15px;
 }
 
 header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-/*button {
+button {
+  font-size: 1.1rem;
+  padding: 15px;
+  border-radius: 2% / 8%;
+  background-color: #ddd;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 80px;
+  border: none;
 
+  color: #000;
+
+  transition: 0.3s;
 }
 
+button:hover {
+  opacity: 1;
+  background-color: #ff511e;
+  color: #fff;
+}
 
+img {
+  max-width: 200px;
+}
+
+footer {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem;
+}
+
+footer p {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
