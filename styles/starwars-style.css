@@ -12,13 +12,14 @@ header h1 {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 3.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 3rem;
     
+
     padding-bottom: 20px;
     text-align: center;
     margin-top: 50px;
-    
+    margin-bottom: 25px;
 }
 
 
@@ -35,9 +36,9 @@ header {
 }
 
 div {
-    width: 270px;
+    width: 300px;
     line-height: 1.2rem;
-    text-align: center;
+    justify-self: center;
 }
 
 div p {
@@ -54,3 +55,16 @@ header img {
     margin-bottom: 40px;
     margin-top: 10px;
 }
+
+footer {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem;
+  }
+  
+  footer p {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
