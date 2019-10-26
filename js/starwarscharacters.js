@@ -82,7 +82,7 @@ mainHeader.appendChild(femaleButton);
 
 
 let otherButton = document.createElement("button")
-otherButton.textContent = "Other"
+otherButton.textContent = "Droids and Others"
 otherButton.addEventListener("click", () => {
   femaleCharacters.forEach(elt => {
     let matchedDiv = allDivs.filter(element => {
