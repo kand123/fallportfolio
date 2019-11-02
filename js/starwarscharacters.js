@@ -40,13 +40,14 @@ const otherCharacters = people.filter(person => person.gender !== "male" && pers
 
 let maleButton = document.createElement("button");
 maleButton.textContent = "Male Characters";
+
+
 maleButton.addEventListener("click", () => {
   
   femaleCharacters.forEach(elt => {
     let matchedDiv = allDivs.filter(element => {
       return element.firstChild.textContent === elt.name;
     });
-    console.log(matchedDiv);
     matchedDiv[0].setAttribute("style", "display: none;");
   });
   otherCharacters.forEach(elt => {
@@ -55,12 +56,21 @@ maleButton.addEventListener("click", () => {
     });
     matchedDiv[0].setAttribute("style", "display: none;");
   });
-});
 
+  /*if(matchedDiv[0].setAttribute('style') === "display: none;") {
+    console.log(matchedDiv[0])
+    matchedDiv[0].setAttribute('style', 'display:revert;')
+  } else {
+    matchedDiv[0].setAttribute('style', 'display:none;')
+  }*/
+
+});
 mainHeader.appendChild(maleButton);
 
 let femaleButton = document.createElement("button")
 femaleButton.textContent = "Female Characters"
+
+
 femaleButton.addEventListener("click", () => {
   maleCharacters.forEach(elt => {
     let matchedDiv = allDivs.filter(element => {
@@ -73,11 +83,17 @@ femaleButton.addEventListener("click", () => {
       return element.firstChild.textContent === elt.name;
     });
     matchedDiv[0].setAttribute("style", "display: none;");
-    
-    
-    
   });
+
+  /*if(matchedDiv.setAttribute('style') === "display: none;") {
+    console.log(matchedDiv)
+    matchedDiv.setAttribute('style', 'display:revert;')
+  } else {
+    matchedDiv.setAttribute('style', 'display:none;')
+  }*/
+
 });
+
 mainHeader.appendChild(femaleButton);
 
 
