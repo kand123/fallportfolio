@@ -44,6 +44,8 @@ maleButton.textContent = "Male Characters";
 
 maleButton.addEventListener("click", () => {
   
+  
+  
   femaleCharacters.forEach(elt => {
     let matchedDiv = allDivs.filter(element => {
       return element.firstChild.textContent === elt.name;
