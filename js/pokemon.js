@@ -28,8 +28,8 @@ function populateDOM(single_pokemon) {
   let name = document.createElement("p");
   let pic = document.createElement("img");
 
-  //pokeDiv.setAttribute("class", "charDivs");
-  //pic.setAttribute("class", "picDivs");
+  pokeDiv.setAttribute("class", "charDivs");
+  pic.setAttribute("class", "picDivs");
 
   pokeScene.setAttribute("class", "scene");
   pokeCard.setAttribute("class", "card");
