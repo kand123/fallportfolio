@@ -51,7 +51,10 @@ function populateDOM(single_pokemon) {
 
   mainArea.appendChild(pokeScene)
 
-  pokeCard.addEventListener('click', function() {
+  pokeCard.addEventListener('mouseover', function() {
+    pokeCard.classList.toggle('is-flipped');
+  });
+  pokeCard.addEventListener('mouseout', function() {
     pokeCard.classList.toggle('is-flipped');
   });
 }

@@ -1,5 +1,5 @@
 body {
-    background-color: #eee;
+    background-color: #ccc;
 }
 
 .picDivs {
@@ -32,9 +32,9 @@ body {
 
 .card.is-flipped {
   transform: rotateY(180deg);
-  background-color: blue;
+  /*background-color: blue;
   border: 8px solid blue;
-  border-radius: 15px;
+  border-radius: 15px;*/
 }
 
 .card__face {
@@ -56,7 +56,7 @@ body {
 .card__face--front {
   background: red;
   backface-visibility: hidden;
-  border: 8px solid yellow;
+  border: 9px solid yellow;
   border-radius: 15px;
 }
 
@@ -88,5 +88,5 @@ img {
 header {
     text-align: center;
     margin-top: 50px;
-    
+
 }
