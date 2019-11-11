@@ -13,20 +13,20 @@ function fetchData(){
     })
 }*/
 
-/*async function getAPIData(url) {
+async function getAPIData(url) {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      return data;
+      return data[0];
     } catch (error) {
       console.error(error);
     }
-  }*/
+  }
   
- /* const theData = getAPIData("https://ghibliapi.herokuapp.com/films/").then(data => {
+ const theData = getAPIData("https://ghibliapi.herokuapp.com/films/").then(data => {
     for (const ghibli of data.results) {
       getAPIData(ghibli.url).then(ghiblidata => {
         console.log(ghiblidata);
       })
     }
-  })*/
+  })

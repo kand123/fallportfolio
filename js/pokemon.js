@@ -31,6 +31,8 @@ function populateDOM(single_pokemon) {
   pokeDiv.setAttribute("class", "charDivs");
   pic.setAttribute("class", "picDivs");
 
+  //fillCardBack(pokeBack, single_pokemon)
+
   pokeScene.setAttribute("class", "scene");
   pokeCard.setAttribute("class", "card");
   pokeFront.setAttribute("class", "charDivs card__face card__face--front");
@@ -59,6 +61,11 @@ function populateDOM(single_pokemon) {
     pokeCard.classList.toggle('is-flipped');
   });
 }
+
+/*function fillCardBack(pokeBack, data) {
+  let pokeOrder = document.createElement('p').textContent = data.order
+  pokeBack.appendChild(pokeOrder)
+}*/
 
 function getPokeNumber(id) {
   if (id < 10) return `00${id}`;
