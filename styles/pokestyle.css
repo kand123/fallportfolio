@@ -61,9 +61,8 @@ body {
 }
 
 .card__face--back {
-  background: blue;
+  background-color: blue;
   transform: rotateY(180deg);
-  
 }
 
 main {

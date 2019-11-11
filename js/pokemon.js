@@ -15,7 +15,7 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/").then(data => {
     });
   }
 });
-//console.log(theData)
+
 
 let mainArea = document.querySelector("main");
 
@@ -48,6 +48,7 @@ function populateDOM(single_pokemon) {
   pokeCard.appendChild(pokeFront)
   pokeDiv.appendChild(pokeBack)
   pokeScene.appendChild(pokeCard)
+  
 
   mainArea.appendChild(pokeScene)
 
@@ -65,6 +66,8 @@ function getPokeNumber(id) {
     return `0${id}`
   } else return id
 }
+
+
 
 /*const allPokemon =(async () => {
 const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
