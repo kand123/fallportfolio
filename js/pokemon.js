@@ -16,7 +16,7 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon/").then(data => {
   }
 });
 
-
+ 
 let mainArea = document.querySelector("main");
 
 function populateDOM(single_pokemon) {
@@ -31,7 +31,7 @@ function populateDOM(single_pokemon) {
   pokeDiv.setAttribute("class", "charDivs");
   pic.setAttribute("class", "picDivs");
 
-  //fillCardBack(pokeBack, single_pokemon)
+  fillCardBack(pokeBack, single_pokemon)
 
   pokeScene.setAttribute("class", "scene");
   pokeCard.setAttribute("class", "card");
@@ -62,10 +62,13 @@ function populateDOM(single_pokemon) {
   });
 }
 
-/*function fillCardBack(pokeBack, data) {
-  let pokeOrder = document.createElement('p').textContent = data.order
+function fillCardBack(pokeBack, data) {
+  pokeBack.setAttrubute('class', 'card__face card__face--back')
+  let pokeOrder = document.createElement('p')
+  let pokeHP = document.createElementNS('h5')
+  pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}$(data.name.slice(1))`
   pokeBack.appendChild(pokeOrder)
-}*/
+}
 
 function getPokeNumber(id) {
   if (id < 10) return `00${id}`;
