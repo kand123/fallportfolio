@@ -40,7 +40,7 @@ const otherCharacters = people.filter(
   person => person.gender !== "male" && person.gender !== "female"
 );
 
-//created a function that would work for all buttons
+//created a function that would work to do all the sorts
 
 function clickHandler(gender) {
   return () => {
@@ -73,7 +73,7 @@ femaleButton.textContent = "Female Characters";
 femaleButton.addEventListener("click", clickHandler("female"));
 
 mainHeader.appendChild(femaleButton);
-
+//a tutor helped me figure out how to target all the different parts of the others
 let otherButton = document.createElement("button");
 otherButton.textContent = "Droids and Others";
 otherButton.addEventListener(
