@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
     background-color: #ccc;
 }
@@ -6,11 +9,7 @@ body {
     width: 80%;
     
 }
-.charDiv {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .scene {
   width: 200px;
@@ -51,18 +50,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
+  border: 9px solid yellow;
 }
 
 .card__face--front {
   background: red;
   backface-visibility: hidden;
-  border: 9px solid yellow;
-  border-radius: 15px;
+  
+ 
+ 
+}
+.card__face--front p {
+  text-transform: capitalize;
 }
 
 .card__face--back {
   background-color: blue;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); 
+  backface-visibility: hidden;
+  
 }
 
 main {

@@ -36,90 +36,55 @@ const mainHeader = document.querySelector("header");
 
 const maleCharacters = people.filter(person => person.gender === "male");
 const femaleCharacters = people.filter(person => person.gender === "female");
-const otherCharacters = people.filter(person => person.gender !== "male" && person.gender !== "female");
+const otherCharacters = people.filter(
+  person => person.gender !== "male" && person.gender !== "female"
+);
+
+//created a function that would work for all buttons
+
+function clickHandler(gender) {
+  return () => {
+    people.forEach(person => {
+      allDivs.forEach(elt => {
+        if (elt.firstChild.textContent === person.name) {
+          if (gender instanceof Array && gender.includes(person.gender)) {
+            elt.setAttribute("style", "display:revert;");
+          } else if (person.gender === gender) {
+            elt.setAttribute("style", "display:revert;");
+          } else {
+            elt.setAttribute("style", "display:none;");
+          }
+        }
+      });
+    });
+  };
+}
 
 let maleButton = document.createElement("button");
 maleButton.textContent = "Male Characters";
 
+maleButton.addEventListener("click", clickHandler("male"));
 
-maleButton.addEventListener("click", () => {
-  
-  
-  
-  femaleCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-  otherCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-
-  /*if(matchedDiv[0].setAttribute('style') === "display: none;") {
-    console.log(matchedDiv[0])
-    matchedDiv[0].setAttribute('style', 'display:revert;')
-  } else {
-    matchedDiv[0].setAttribute('style', 'display:none;')
-  }*/
-
-});
 mainHeader.appendChild(maleButton);
 
-let femaleButton = document.createElement("button")
-femaleButton.textContent = "Female Characters"
+let femaleButton = document.createElement("button");
+femaleButton.textContent = "Female Characters";
 
-
-femaleButton.addEventListener("click", () => {
-  maleCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-  otherCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-
-  /*if(matchedDiv.setAttribute('style') === "display: none;") {
-    console.log(matchedDiv)
-    matchedDiv.setAttribute('style', 'display:revert;')
-  } else {
-    matchedDiv.setAttribute('style', 'display:none;')
-  }*/
-
-});
+femaleButton.addEventListener("click", clickHandler("female"));
 
 mainHeader.appendChild(femaleButton);
 
+let otherButton = document.createElement("button");
+otherButton.textContent = "Droids and Others";
+otherButton.addEventListener(
+  "click",
+  clickHandler(["n/a", "none", "hermaphrodite"])
+);
 
-let otherButton = document.createElement("button")
-otherButton.textContent = "Droids and Others"
-otherButton.addEventListener("click", () => {
-  femaleCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-  maleCharacters.forEach(elt => {
-    let matchedDiv = allDivs.filter(element => {
-      return element.firstChild.textContent === elt.name;
-    });
-    matchedDiv[0].setAttribute("style", "display: none;");
-  });
-});
 mainHeader.appendChild(otherButton);
 
-
-let allButton = document.createElement("button")
-allButton.textContent = "All"
+let allButton = document.createElement("button");
+allButton.textContent = "All";
 allButton.addEventListener("click", () => {
   femaleCharacters.forEach(elt => {
     let matchedDiv = allDivs.filter(element => {
@@ -141,5 +106,3 @@ allButton.addEventListener("click", () => {
   });
 });
 mainHeader.appendChild(allButton);
-
-
