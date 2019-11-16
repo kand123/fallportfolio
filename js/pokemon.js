@@ -63,11 +63,12 @@ function populateDOM(single_pokemon) {
 }
 
 function fillCardBack(pokeBack, data) {
-  pokeBack.setAttrubute('class', 'card__face card__face--back')
+  pokeBack.setAttribute('class', 'card__face card__face--back')
   let pokeOrder = document.createElement('p')
-  let pokeHP = document.createElementNS('h5')
-  pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}$(data.name.slice(1))`
+  let pokeHP = document.createElement('h5')
+  //pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}$(data.name.slice(1))`
   pokeBack.appendChild(pokeOrder)
+  pokeBack.appendChild(pokeHP)
 }
 
 function getPokeNumber(id) {
@@ -76,20 +77,3 @@ function getPokeNumber(id) {
     return `0${id}`
   } else return id
 }
-
-
-
-/*const allPokemon =(async () => {
-const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
-const myJson = await response.json()
-console.log(JSON.stringify(myJson))
-})
-
-console.log(allPokemon())*/
-
-//for of vs for each vs for in
-//copy async code to code journal
-
-//fetch makes a get request
-
-//api calls and flip
