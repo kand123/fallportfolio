@@ -73,7 +73,9 @@ femaleButton.textContent = "Female Characters";
 femaleButton.addEventListener("click", clickHandler("female"));
 
 mainHeader.appendChild(femaleButton);
+
 //a tutor helped me figure out how to target all the different parts of the others
+
 let otherButton = document.createElement("button");
 otherButton.textContent = "Droids and Others";
 otherButton.addEventListener(
