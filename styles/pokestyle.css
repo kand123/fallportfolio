@@ -72,6 +72,12 @@ body {
   
 }
 
+.card__face--back p {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
 main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
