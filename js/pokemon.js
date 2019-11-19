@@ -67,7 +67,7 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
-  //pokeOrder.textContent = `#${data.id} ${data.name[0].toUpperCase()}$(data.name.slice(1))`
+  pokeOrder.textContent = `${data.id}`
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
 }
