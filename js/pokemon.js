@@ -1,3 +1,7 @@
+
+
+
+
 document.querySelector("#pokeButton").addEventListener("click", () => {
   let pokeId = prompt("Provide the Pokemon ID of the Pokemon you want to add:");
   let pokeIdNum = parseInt(pokeId, 10);
@@ -12,6 +16,8 @@ document.querySelector("#pokeButton").addEventListener("click", () => {
       .catch(error => console.log(error));
   }
 });
+
+
 
 async function getAPIData(url) {
   try {
@@ -83,8 +89,8 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
-  pokeOrder.textContent = `${data.types[0].type.name}`;
-  //pokeHP.textContent = `${data.types[0].stats.name}`
+  pokeOrder.textContent = `type: ${data.types[0].type.name}`;
+  // pokeHP.textContent = `${data.stats[1].base_stat}`;
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
 }

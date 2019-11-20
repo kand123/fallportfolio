@@ -5,10 +5,7 @@ body {
     background-color: #ccc;
 }
 
-.picDivs {
-    width: 80%;
-    
-}
+
 
 
 .scene {
@@ -17,6 +14,7 @@ body {
   
   margin: 15px 0;
   perspective: 600px;
+  
 }
 
 .card {
@@ -52,14 +50,12 @@ body {
   justify-content: center;
   border-radius: 15px;
   border: 9px solid yellow;
+  
 }
 
 .card__face--front {
   background: red;
   backface-visibility: hidden;
-  
- 
- 
 }
 .card__face--front p {
   text-transform: capitalize;
@@ -69,7 +65,6 @@ body {
   background-color: blue;
   transform: rotateY(180deg); 
   backface-visibility: hidden;
-  
 }
 
 .card__face--back p {
@@ -85,7 +80,7 @@ main {
     width:100%;
     max-width: 1280px;
     margin: 0 auto;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 p {
@@ -100,28 +95,32 @@ img {
 header {
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 25px;
-
+    margin-bottom: 35px;
 }
 
 header p {
   text-align: left;
+  margin: 20px;
 }
 
+
+
+
 button {
-  width: 150px;
-  height: 80px;
+  width: 160px;
+  height: 60px;
   background-color: blue;
   color: #fff;
   font-size: 1.2rem;
   border-radius: 10px;
-  
-
 } 
 
 button:hover {
   background-color: red;
-  
 }
 
-
+#add {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
