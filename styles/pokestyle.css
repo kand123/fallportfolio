@@ -100,5 +100,28 @@ img {
 header {
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 25px;
 
 }
+
+header p {
+  text-align: left;
+}
+
+button {
+  width: 150px;
+  height: 80px;
+  background-color: blue;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  
+
+} 
+
+button:hover {
+  background-color: red;
+  
+}
+
+

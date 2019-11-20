@@ -1,3 +1,18 @@
+document.querySelector("#pokeButton").addEventListener("click", () => {
+  let pokeId = prompt("Provide the Pokemon ID of the Pokemon you want to add:");
+  let pokeIdNum = parseInt(pokeId, 10);
+  if (pokeIdNum > 807) {
+    alert("That Pokemon ID does not exist! Please enter a different one.");
+    return;
+  } else {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+      .then(result => {
+        populateDOM(result);
+      })
+      .catch(error => console.log(error));
+  }
+});
+
 async function getAPIData(url) {
   try {
     const response = await fetch(url);
@@ -45,7 +60,8 @@ function populateDOM(single_pokemon) {
   name.textContent = single_pokemon.name;
   console.log(single_pokemon.types[0].type.name);
 
-  pic.src = `../assets/images/${pokeNum}.png`;
+  //pic.src = `../assets/images/${pokeNum}.png`;
+  pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`;
   pokeFront.appendChild(pic);
   pokeFront.appendChild(name);
 
@@ -67,7 +83,7 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
-  pokeOrder.textContent = `${data.types[0].type.name}`
+  pokeOrder.textContent = `${data.types[0].type.name}`;
   //pokeHP.textContent = `${data.types[0].stats.name}`
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
