@@ -1,6 +1,11 @@
-
-
-
+const pageData = {
+  title: "Pokemon",
+  description: "Lorem"
+};
+const pageTitle = document.querySelector("#page__title");
+pageTitle.textContent = pageData.title;
+const pageDescription = document.querySelector("#page__description");
+pageDescription.textContent = pageData.description;
 
 document.querySelector("#pokeButton").addEventListener("click", () => {
   let pokeId = prompt("Provide the Pokemon ID of the Pokemon you want to add:");
@@ -16,8 +21,6 @@ document.querySelector("#pokeButton").addEventListener("click", () => {
       .catch(error => console.log(error));
   }
 });
-
-
 
 async function getAPIData(url) {
   try {
@@ -56,7 +59,12 @@ function populateDOM(single_pokemon) {
 
   pokeScene.setAttribute("class", "scene");
   pokeCard.setAttribute("class", "card");
-  pokeFront.setAttribute("class", "card__face card__face--front");
+  pokeFront.setAttribute(
+    "class",
+    `card__face card__face--front ${
+      single_pokemon.types.filter(type => type.slot == 1)[0].type.name
+    }`
+  );
 
   pokeBack.setAttribute("class", "card__face card__face--back");
   pic.setAttribute("class", "picDivs");
@@ -89,10 +97,19 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
-  pokeOrder.textContent = `type: ${data.types[0].type.name}`;
-  // pokeHP.textContent = `${data.stats[1].base_stat}`;
+  let pokeAbilities = document.createElement("ul");
+  pokeOrder.textContent = `type(s): ${data.types.map(t => t.type.name).join(', ')}`;
+  pokeHP.textContent = `HP: ${data.stats[5].base_stat}`;
+  pokeAbilities.innerHTML = data.abilities
+    .map(a => a.ability.name)
+    .reduce(
+      (accumulator, currentValue) =>
+        (accumulator += `<li class="ability">${currentValue}</li>`),
+      ""
+    );
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
+  pokeBack.appendChild(pokeAbilities);
 }
 
 function getPokeNumber(id) {
