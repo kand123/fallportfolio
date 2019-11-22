@@ -137,16 +137,19 @@ header p {
 
 
 button {
-  width: 160px;
-  height: 60px;
-  background-color: blue;
+  width: 170px;
+  height: 65px;
+  background-color:  rgb(36, 74, 150);
   color: #fff;
   font-size: 1.2rem;
+  
   border-radius: 10px;
 } 
 
 button:hover {
-  background-color: red;
+  background-color: rgb(252, 239, 61);
+  color: rgb(60, 95, 166);
+  
 }
 
 #add {
