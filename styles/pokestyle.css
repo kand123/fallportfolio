@@ -2,7 +2,12 @@
   box-sizing: border-box;
 }
 body {
-    background-color: #ccc;
+    background-image: url(../assets/images/pokemonlogo.png);
+    background-color: rgb(213, 210, 214);
+    background-repeat: no-repeat;
+  background-size: 300px;
+  background-position-x: 50%;
+  background-position-y: 1%;
 }
 
 
@@ -38,7 +43,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  line-height: 45px;
+  
  
   text-align: center;
   font-weight: bold;
@@ -49,29 +54,41 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  border: 9px solid yellow;
+  
   
 }
 
 .card__face--front {
   background: red;
   backface-visibility: hidden;
+  border:9px solid rgb(236, 221, 3);
+  line-height: 55px;
 }
 .card__face--front p {
   text-transform: capitalize;
 }
 
 .card__face--back {
-  background-color: blue;
+  /* background-color: blue; */
+  background-image:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url("../assets/images/pokemonback.jpg");
+  
+  background-size: 210px;
+  
   transform: rotateY(180deg); 
   backface-visibility: hidden;
+border:9px solid rgb(1, 1, 116);
+line-height: 35px;
 }
 
 .card__face--back p {
-  color: #fff;
+  color: #000;
   text-transform: capitalize;
 }
-
+/* .card__face--back img {
+  position: absolute;
+  height: auto;
+  width:auto;
+} */
 
 main {
     display: grid;
@@ -88,6 +105,7 @@ main {
 p {
  color: black;
  margin: 0;
+ padding: 0;
 }
 
 img {
@@ -105,7 +123,17 @@ header p {
   margin: 60px;
 }
 
+.card__face--back h5 {
+  margin:0;
+  padding:0rem 0 4rem 0;
+  font-size: 1.5rem;
+  font-weight: 700px;
+}
 
+.card__face--back p {
+  font-size: 1.2rem;
+  font-weight: 700px;
+}
 
 
 button {
@@ -197,4 +225,29 @@ button:hover {
 
 .fairy {
   background-color: #d685ad;
+}
+
+ul {
+  font-size: 12px;
+  line-height: 1.2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size:.9rem;
+
+  
+  
+}
+
+ul li {
+  margin:0;
+  
+}
+
+#page__title {
+  padding-top: 4rem;
+  color: rgb(2, 35, 105);
+  font-size: 2.3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }

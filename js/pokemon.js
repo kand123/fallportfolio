@@ -1,11 +1,16 @@
+//created an object to store title and page description. just because.
+
 const pageData = {
-  title: "Pokemon",
-  description: "Lorem"
+  title: 'FUN!',
+  description: "This is my Pokemon page. I will tell you more about it."
 };
 const pageTitle = document.querySelector("#page__title");
 pageTitle.textContent = pageData.title;
 const pageDescription = document.querySelector("#page__description");
 pageDescription.textContent = pageData.description;
+
+
+//button for new pokemon
 
 document.querySelector("#pokeButton").addEventListener("click", () => {
   let pokeId = prompt("Provide the Pokemon ID of the Pokemon you want to add:");
@@ -22,6 +27,8 @@ document.querySelector("#pokeButton").addEventListener("click", () => {
   }
 });
 
+
+//async fetch
 async function getAPIData(url) {
   try {
     const response = await fetch(url);
@@ -97,9 +104,12 @@ function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
+  let pokeAb = document.createElement('p')
   let pokeAbilities = document.createElement("ul");
-  pokeOrder.textContent = `type(s): ${data.types.map(t => t.type.name).join(', ')}`;
+  pokeOrder.textContent = `type: ${data.types.map(t => t.type.name).join(', ')}`;
+
   pokeHP.textContent = `HP: ${data.stats[5].base_stat}`;
+  pokeAb.textContent = 'Abilities:'
   pokeAbilities.innerHTML = data.abilities
     .map(a => a.ability.name)
     .reduce(
@@ -107,9 +117,12 @@ function fillCardBack(pokeBack, data) {
         (accumulator += `<li class="ability">${currentValue}</li>`),
       ""
     );
+  
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
+  pokeBack.appendChild(pokeAb);
   pokeBack.appendChild(pokeAbilities);
+  
 }
 
 function getPokeNumber(id) {
