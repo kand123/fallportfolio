@@ -2,24 +2,20 @@
   box-sizing: border-box;
 }
 body {
-    background-image: url(../assets/images/pokemonlogo.png);
-    background-color: rgb(213, 210, 214);
-    background-repeat: no-repeat;
+  background-image: url(../assets/images/pokemonlogo.png);
+  background-color: rgb(214, 213, 210);
+  background-repeat: no-repeat;
   background-size: 300px;
   background-position-x: 50%;
   background-position-y: 1%;
 }
 
-
-
-
 .scene {
   width: 100%;
   height: 300px;
-  
+
   margin: 15px 0;
   perspective: 600px;
-  
 }
 
 .card {
@@ -29,7 +25,6 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
-  
 }
 
 .card.is-flipped {
@@ -43,26 +38,25 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  
- 
+
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  
-  
+  box-shadow: 3px 3px 3px #999;
 }
 
 .card__face--front {
   background: red;
   backface-visibility: hidden;
-  border:9px solid rgb(236, 221, 3);
+  border: 9px solid rgb(254, 223, 48);
   line-height: 55px;
+  font-family: "Open Sans", sans-serif;
 }
 .card__face--front p {
   text-transform: capitalize;
@@ -70,14 +64,18 @@ body {
 
 .card__face--back {
   /* background-color: blue; */
-  background-image:linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url("../assets/images/pokemonback.jpg");
-  
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("../assets/images/pokemonback.jpg");
+
   background-size: 210px;
-  
-  transform: rotateY(180deg); 
+
+  transform: rotateY(180deg);
   backface-visibility: hidden;
-border:9px solid rgb(1, 1, 116);
-line-height: 35px;
+  border: 9px solid rgb(1, 1, 128);
+  line-height: 35px;
 }
 
 .card__face--back p {
@@ -91,65 +89,68 @@ line-height: 35px;
 } */
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2rem;
-    width:100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 3rem;
-    justify-items: center;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  justify-items: center;
 }
 
 p {
- color: black;
- margin: 0;
- padding: 0;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    width:150px;
+  width: 150px;
 }
 
 header {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 35px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
 
 header p {
   text-align: left;
-  margin: 60px;
+  margin: 0 6%;
+  line-height: 145%;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .card__face--back h5 {
-  margin:0;
-  padding:0rem 0 4rem 0;
+  margin: 0;
+  padding: 0rem 0 4rem 0;
   font-size: 1.5rem;
   font-weight: 700px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .card__face--back p {
   font-size: 1.2rem;
   font-weight: 700px;
+  font-family: 'PT Sans', sans-serif;
 }
-
 
 button {
   width: 170px;
   height: 65px;
-  background-color:  rgb(36, 74, 150);
+  background-color: rgb(36, 74, 150);
   color: #fff;
   font-size: 1.2rem;
-  
+  border: none;
   border-radius: 10px;
-} 
+  box-shadow: 2px 2px 2px #999;
+  font-family: 'PT Sans', sans-serif;
+}
 
 button:hover {
   background-color: rgb(252, 239, 61);
   color: rgb(60, 95, 166);
-  
 }
 
 #add {
@@ -159,7 +160,7 @@ button:hover {
 }
 
 .grass {
-  background-color: #7AC74C;
+  background-color: #7ac74c;
 }
 
 .bug {
@@ -167,27 +168,27 @@ button:hover {
 }
 
 .normal {
-  background-color: #A8A77A;
+  background-color: #a8a77a;
 }
 
 .fire {
-  background-color: #EE8130;
+  background-color: #ee8130;
 }
 
 .poison {
-  background-color: #a33EA1;
+  background-color: #a33ea1;
 }
 
 .electric {
-  background-color: #F7D02C;
+  background-color: #f7d02c;
 }
 
 .water {
-  background-color: #6390F0;
+  background-color: #6390f0;
 }
 
 .ice {
-  background-color: #96D9D6;
+  background-color: #96d9d6;
 }
 
 .fighting {
@@ -195,11 +196,11 @@ button:hover {
 }
 
 .ground {
-  background-color: #E2BF65;
+  background-color: #e2bf65;
 }
 
 .flying {
-  background-color: #A98FF3;
+  background-color: #a98ff3;
 }
 
 .psychic {
@@ -236,21 +237,17 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size:.9rem;
-
-  
-  
+  font-size: 0.9rem;
 }
 
 ul li {
-  margin:0;
-  
+  margin: 0;
 }
 
 #page__title {
   padding-top: 4rem;
   color: rgb(2, 35, 105);
   font-size: 2.3rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }

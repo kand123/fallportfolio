@@ -1,16 +1,16 @@
 //created an object to store title and page description. just because.
 
 const pageData = {
-  title: 'FUN!',
-  description: "This is my Pokemon page. I will tell you more about it."
+  title: "FUN!",
+  description:
+    "Pokemon is fun! I was able to use Javascript to grab data from an API and display an image and selected data on the cards. The layout was done with CSS grid. If you mouse over any card, it will flip and you can see data related to that Pokemon. The color of the card is determined by a class attached to each Pokemon's primary type. The colors should correspond with the colors of actual physical Pokemon cards. This collection contains the first 25 Pokemon, but you can add additional Pokemon to the page by using the button at the bottom of the page. The same data will be displayed for any Pokemon between the numbers 1 and 807. Enjoy!"
 };
 const pageTitle = document.querySelector("#page__title");
 pageTitle.textContent = pageData.title;
 const pageDescription = document.querySelector("#page__description");
 pageDescription.textContent = pageData.description;
 
-
-//button for new pokemon
+//button for adding new pokemon
 
 document.querySelector("#pokeButton").addEventListener("click", () => {
   let pokeId = prompt("Provide the Pokemon ID of the Pokemon you want to add:");
@@ -27,8 +27,8 @@ document.querySelector("#pokeButton").addEventListener("click", () => {
   }
 });
 
-
 //async fetch
+
 async function getAPIData(url) {
   try {
     const response = await fetch(url);
@@ -49,6 +49,8 @@ const theData = getAPIData("https://pokeapi.co/api/v2/pokemon?limit=25").then(
   }
 );
 
+//populate DOM
+
 let mainArea = document.querySelector("main");
 
 function populateDOM(single_pokemon) {
@@ -66,6 +68,9 @@ function populateDOM(single_pokemon) {
 
   pokeScene.setAttribute("class", "scene");
   pokeCard.setAttribute("class", "card");
+
+  //set card color by primary type
+
   pokeFront.setAttribute(
     "class",
     `card__face card__face--front ${
@@ -92,6 +97,8 @@ function populateDOM(single_pokemon) {
 
   mainArea.appendChild(pokeScene);
 
+  //mouseover for flip, mouseout to flip back
+
   pokeCard.addEventListener("mouseover", function() {
     pokeCard.classList.toggle("is-flipped");
   });
@@ -100,16 +107,25 @@ function populateDOM(single_pokemon) {
   });
 }
 
+//separate function to fill card back
+
 function fillCardBack(pokeBack, data) {
   pokeBack.setAttribute("class", "card__face card__face--back");
   let pokeOrder = document.createElement("p");
   let pokeHP = document.createElement("h5");
-  let pokeAb = document.createElement('p')
+  let pokeAb = document.createElement("p");
   let pokeAbilities = document.createElement("ul");
-  pokeOrder.textContent = `type: ${data.types.map(t => t.type.name).join(', ')}`;
+
+  //targeted types using map and then joined with a comma
+
+  pokeOrder.textContent = `type: ${data.types
+    .map(t => t.type.name)
+    .join(", ")}`;
 
   pokeHP.textContent = `HP: ${data.stats[5].base_stat}`;
-  pokeAb.textContent = 'Abilities:'
+  pokeAb.textContent = "Abilities:";
+
+  // tutor helped me figure out how to target abilities. I didn't know about .innerHTML before
   pokeAbilities.innerHTML = data.abilities
     .map(a => a.ability.name)
     .reduce(
@@ -117,12 +133,11 @@ function fillCardBack(pokeBack, data) {
         (accumulator += `<li class="ability">${currentValue}</li>`),
       ""
     );
-  
+
   pokeBack.appendChild(pokeOrder);
   pokeBack.appendChild(pokeHP);
   pokeBack.appendChild(pokeAb);
   pokeBack.appendChild(pokeAbilities);
-  
 }
 
 function getPokeNumber(id) {
